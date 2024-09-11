@@ -7,7 +7,7 @@ main :: IO ()
 main = do
     args <- getArgs
     case args of
-        [filePath, numCores] -> processFile filePath (read numCores)
+        [filePath, numCores] -> processFile filePath (read numCores :: Int)
         [filePath] -> do
             tableLines <- getCreateTableLines filePath
             print tableLines

@@ -1,6 +1,11 @@
 module Lib
     ( processFile
-    , getCreateTableLines
+    , FP.getCreateTableLines
     ) where
 
-import FileProcessing (processFile, getCreateTableLines)
+import qualified FileProcessing as FP
+
+processFile :: FilePath -> Int -> IO ()
+processFile filePath numCores = do
+    tableLines <- FP.getCreateTableLines filePath
+    print tableLines

@@ -24,6 +24,7 @@ dependencies:
 - async
 - bytestring
 - directory
+- containers
 
 ghc-options:
 - -Wall
