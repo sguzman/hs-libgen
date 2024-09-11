@@ -1,0 +1,9 @@
+.stack-work/
+*~
+*.cache
+*lock
+target/
+out/
+*.sql
+*.rar
+*.csv
