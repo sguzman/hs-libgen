@@ -1,4 +1,4 @@
-module Main where
+module Main (main) where
 
 import Lib (processFile, getCreateTableLines)
 import System.Environment (getArgs)
@@ -9,7 +9,7 @@ main = do
     case args of
         [filePath, numCores] -> processFile filePath (read numCores)
         [filePath] -> do
-            lines <- getCreateTableLines filePath
-            print lines
+            tableLines <- getCreateTableLines filePath
+            print tableLines
         _ -> putStrLn "Usage: stack run <file_path> [<num_cores>]"
 

@@ -21,9 +21,9 @@ isCreateTableStatement :: String -> Bool
 isCreateTableStatement = isPrefixOf "CREATE TABLE"
 
 formatOutput :: Int -> BS.ByteString -> String
-formatOutput lineNum line = "Line " ++ show lineNum ++ ": " ++ C8.unpack line
+formatOutput lineNum _ = show lineNum
 
-getSpecificLine :: FilePath -> Int -> IO BS.ByteString  -- Renamed from getLine to getSpecificLine
+getSpecificLine :: FilePath -> Int -> IO BS.ByteString
 getSpecificLine filePath lineNum = withFile filePath ReadMode $ \handle -> do
     hSeek handle AbsoluteSeek (fromIntegral (lineNum - 1))
     BS.hGetLine handle
