@@ -25,10 +25,7 @@ source-repository head
 
 library
   exposed-modules:
-      CacheManagement
-      FileProcessing
       Lib
-      LineProcessing
   other-modules:
       Paths_libgen
   autogen-modules:
